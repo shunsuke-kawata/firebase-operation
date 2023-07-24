@@ -1,0 +1,11 @@
+version: "3" 
+services:
+  python: # サービス名 
+    container_name: python-dev-firebase # コンテナ名
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/tmp/work/ #現在のフォルダをコンテナにマウント  (ローカルのディレクトリ):(コンテナ内のディレクトリ)
+    tty: true  #コンテナが起動し続ける
+
